@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class FoldPaper {
+    public String[] foldPaper(int n) {
+        // write code here
+    	String[] ret = new String[2^n-1];
+    	
+    	int m = (2^n-2)/2;
+    	foldPaperInside(ret, m);
+    	return ret;
+    	
+    }
+    private void foldPaperInside(String[] ret, int m){
+    	int i = m;
+    	while(i >= 0){
+    		int dir=-1;/*down*/
+    		for(int j=i/2; j<=m; j+=i){
+    			if(dir==-1) ret[j]="down";
+    			else ret[j] = "up";
+    			dir = (-1)*dir;
+    		}
+    		i = i/2;
+    	}
+    }
+}

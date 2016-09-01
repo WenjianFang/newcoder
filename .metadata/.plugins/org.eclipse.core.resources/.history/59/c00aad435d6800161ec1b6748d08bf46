@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class ReverseStack {
+    public int[] reverseStackRecursively(int[] stack, int top) {
+        // write code here
+    	int[] ret = new int[top];
+    	
+    	reverseStackInside(stack, ret, top);
+    	
+    	
+    	return ret;
+    }
+}

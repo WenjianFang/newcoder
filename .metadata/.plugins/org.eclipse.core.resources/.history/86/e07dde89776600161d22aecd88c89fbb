@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class FoldPaper {
+    public String[] foldPaper(int n) {
+        // write code here
+    	String[] ret = new String[2^n-1];
+    	
+    	foldPaperInside(ret, n);
+    	return ret;
+    }
+    private void foldPaperInside(String[] ret, int n){
+    	
+    }
+}

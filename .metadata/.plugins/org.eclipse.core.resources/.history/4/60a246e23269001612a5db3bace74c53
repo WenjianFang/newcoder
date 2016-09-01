@@ -1,0 +1,15 @@
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] A = {9, 8,4};
+		int n = 3;
+		int ret = new ArrayMex().findArrayMex(A, n);
+		System.out.println(ret);
+	}
+
+}

@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class ArrayMex {
+    public int findArrayMex(int[] A, int n) {
+        // write code here
+    	int l=0;
+    	int r=n-1;
+    	
+    	while(l<r){
+    		if(A[l] == l+1) l++;
+    		else if((A[l] < l+1)||(A[l] > r+1)||(A[A[l]-1] == A[l])){
+    			A[l] = A[r];
+    			r--;
+    		}
+    		else{
+    			int tmp = A[l];
+    			A[l] = A[A[l]-1];
+    			A[A[l]-1] = tmp;
+    		}
+    	}
+    }
+}

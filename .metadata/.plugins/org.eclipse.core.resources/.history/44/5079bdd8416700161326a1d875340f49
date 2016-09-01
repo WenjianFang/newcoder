@@ -1,0 +1,67 @@
+import java.util.*;
+
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+    ListNode(int val) {
+        this.val = val;
+	}
+}*/
+public class PalindromeList {
+    public boolean chkPalindrome(ListNode A) {
+    	// write code here
+    	ListNode list1 = A;
+    	ListNode list2 = A;
+    	int n = divideList(list1, list2);
+    	reverse(list1, n);
+    }
+    private void reverse(ListNode list1, int n){
+    	if(n == 1) return;
+    	if(n == 2) {
+    		ListNode tmp = list1.next;
+    		tmp.next = list1;
+    		list1.next = null;
+    		list1 = tmp;
+    		return;
+    	}
+    	ListNode p1 = list1;
+    	ListNode p2 = p1.next;
+    	ListNode p3 = p2.next;
+    	
+    	while(p3 != null){
+    		p1.next = p3;
+    		p2.next = list1;
+    		list1 = p2;
+    		p2 = p3;
+    		p3 = p2.next;
+    	}
+    	p2.next = list1;
+    	list1 = p2;
+    	p1.next = null;
+    }
+    private int divideList(ListNode list1, ListNode list2){
+    	
+    	ListNode tmp = list1;
+    	int count = 0;
+    	while(tmp != null){
+    		count++;
+    		tmp = tmp.next;
+    	}
+    	if(count == 0) return 0;
+    	if(count == 1) return 1;
+    	tmp = list1;
+    	int i = count/2;
+    	ListNode p = tmp;
+    	while(i > 0){
+    		p = tmp;
+    		tmp = tmp.next;
+    		i--;
+    	}
+    	p.next = null;
+    	if(count % 2 == 0) list2 = tmp;
+    	else list2 = tmp.next;
+    	
+    	return count/2;
+    }
+}

@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class MaxDivision {
+    public int findMaxDivision(int[] A, int n) {
+        // write code here
+    	int max = A[0];
+    	int min = A[0];
+    	for(int i = 0; i<A.length; i++){
+    		if(A[i]>max) max = A[i];
+    		if(A[i]<min) min = A[i];
+    	}
+    	
+    	int ave = (max-min)/(A.length-1);
+    	
+    	int bottleNum = (int)Math.ceil((double)(max-min)/ave);
+    	int[] minBottle = new int[bottleNum];
+    	int[] maxBottle = new int[bottleNum];
+    	for(int i=0; i<bottleNum; i++){
+    		minBottle[i] = min+(i+1)*ave;
+    		maxBottle[i] = min+i*ave;
+    	}
+    	for(int i=0; i<n; i++){
+    		int which = (A[i]-min)/ave;
+    		if(A[i]>maxBottle[which]) maxBottle[which] = A[i];
+    		if(A[i]<minBottle[which]) minBottle[which] = A[i];
+    	}
+    	int ret = minBottle[1]-maxBottle[0];
+    	for(int i = 0; i<bottleNum-1;i++){
+    		if(minBottle[i+1]-maxBottle[i] > ret)
+    			ret = minBottle[i+1]-maxBottle[i];   		
+    	}
+    	return ret;
+    }
+}

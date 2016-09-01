@@ -1,0 +1,16 @@
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int ret = run(2,3);
+		System.out.println(ret);
+	}
+	private static int run(int a, int b){
+		return a < b ? a:b;
+	}
+
+}

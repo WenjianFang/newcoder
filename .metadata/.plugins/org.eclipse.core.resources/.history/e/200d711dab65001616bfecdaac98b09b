@@ -1,0 +1,18 @@
+import java.util.Arrays;
+
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] mat = {{1,2},{3,4},{5,6}};
+		int n = 2;
+		int m=2;
+		int[] ret = new ClockWisePrint().clockwisePrint(mat, n, m);
+		System.out.println(Arrays.toString(ret));
+	}
+
+}

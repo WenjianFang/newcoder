@@ -1,0 +1,12 @@
+
+public final class Utils {
+
+	private Utils(){}
+	public static void print(ListNode l){
+    	ListNode tmp = l;
+    	while(tmp != null){
+    		System.out.print(tmp.val);
+    		tmp = tmp.next;
+    	}
+    }
+}

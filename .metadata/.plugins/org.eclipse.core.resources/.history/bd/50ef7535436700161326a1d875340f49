@@ -1,0 +1,16 @@
+
+public class ListNode {
+	int val;
+	ListNode next = null;
+	ListNode(int val){
+		this.val = val;
+	}
+	
+	public void print(ListNode l){
+    	ListNode tmp = l;
+    	while(tmp != null){
+    		System.out.println(tmp.val);
+    		tmp = tmp.next;
+    	}
+    }
+}
